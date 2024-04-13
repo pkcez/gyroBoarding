@@ -1,3 +1,4 @@
+let spinCount = 0;
 let aRot = null;
 let prevRotA = null;
 let totalRotationA = 0;
