@@ -12,7 +12,7 @@ function error(problem){
     document.getElementById("errors").innerHTML += problem
 }
 
-function showRot(e){
+function calculateSpins(e){
     if (aRot === null){
         aRot = e.alpha
     }
@@ -27,8 +27,8 @@ function showRot(e){
 
     if (Math.abs(totalRotationA) >= 180) {
         spinCountA++;
-        console.log('Phone has spun 180 degrees alpha. Spin count:', spinCountA);
-        document.getElementById("shuvTotal").innerHTML = spinCountA
+        errror('Phone has spun 180 degrees alpha. Spin count:', spinCountA);
+        document.getElementById("shuvTotal").innerHTML += spinCountA
         
         totalRotationA = 0;
     }
@@ -47,11 +47,13 @@ function showRot(e){
 
     if (Math.abs(totalRotationB) >= 180) {
         spinCountB++;
-        console.log('Phone has spun 180 degrees beta. Spin count:', spinCountB);
+        errror('Phone has spun 180 degrees beta. Spin count:', spinCountB);
+
         
         totalRotationB = 0;
     }
-
+}
+function showRot(e){
     let a = Math.round(e.alpha / 30) * 30
     let b = Math.round(e.beta / 30) * 30
     let g = Math.round(e.gamma / 30) * 30
@@ -59,8 +61,9 @@ function showRot(e){
     document.getElementById("Shuv").innerHTML = a
     document.getElementById("Flip").innerHTML = b
     document.getElementById("KickHeel").innerHTML = g
-    
+    calculateSpins(e);
 }
+
 async function getRot(){
     if(typeof DeviceOrientationEvent !='undefined ' && typeof DeviceOrientationEvent.requestPermission === 'function'){
         //if it's IOS 13+
