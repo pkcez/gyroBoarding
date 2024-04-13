@@ -1,3 +1,7 @@
+function radiansToDegrees(radians) {
+    return radians * (180 / Math.PI);
+}
+
 
 function showRot(e){
     //console.log(e);
@@ -5,12 +9,10 @@ function showRot(e){
     let b = Math.round(e.beta / 90) * 90
     let g = Math.round(e.gamma / 90) * 90
 
-    document.getElementById("Shuv").innerHTML = a
-    document.getElementById("Flip").innerHTML = b
-    document.getElementById("KickHeel").innerHTML = g
-
-    var newRot = [a, b, g]
-    lastRotationValues = newRot;
+    document.getElementById("Shuv").innerHTML = Math.round(a / 90) * 90
+    document.getElementById("Flip").innerHTML = Math.round(b / 90) * 90
+    document.getElementById("KickHeel").innerHTML = Math.round(g / 90) * 90
+    
 }
 async function getRot(){
     if(typeof DeviceOrientationEvent !='undefined ' && typeof DeviceOrientationEvent.requestPermission === 'function'){
