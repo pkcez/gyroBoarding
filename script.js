@@ -4,7 +4,7 @@ function showRot(e){
     let b = e.beta
     let g = e.gamma
 
-    document.getElementById("rot").innerHTML = "| A: " + a + " | B: " + b + " | G: " + g + " |"
+    document.getElementById("rot").innerHTML = "| A: " + Math.Round(a) + " | B: " + Math.Round(b) + " | G: " + Math.Round(g) + " |"
 }
 async function getRot(){
     if(typeof DeviceOrientationEvent !='undefined ' && typeof DeviceOrientationEvent.requestPermission === 'function'){
