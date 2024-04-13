@@ -3,3 +3,27 @@
     font-size: xx-large;
     font-family: system-ui;
 }
+
+table {
+    font-weight: 900;
+    font-size: xx-large;
+    font-family: system-ui;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    font-weight: 900;
+    font-size: xx-large;
+    font-family: system-ui;
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    font-weight: 900;
+    font-size: xx-large;
+    font-family: system-ui;
+    background-color: #f2f2f2;
+}
