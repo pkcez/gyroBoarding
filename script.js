@@ -1,11 +1,13 @@
-let spinCount = 0;
+let spinCountA = 0;
 let aRot = null;
 let prevRotA = null;
 let totalRotationA = 0;
 
+let spinCountB = 0;
 let bRot = null;
 let prevRotB = null;
 let totalRotationB = 0;
+
 
 
 function showRot(e){
@@ -23,7 +25,7 @@ function showRot(e){
 
     if (Math.abs(totalRotationA) >= 180) {
         spinCount++;
-        console.log('Phone has spun 180 degrees. Spin count:', spinCount);
+        console.log('Phone has spun 180 degrees. Spin count:', spinCountA);
         
         totalRotationA = 0;
     }
@@ -42,28 +44,9 @@ function showRot(e){
 
     if (Math.abs(totalRotationB) >= 180) {
         spinCount++;
-        console.log('Phone has spun 180 degrees. Spin count:', spinCount);
+        console.log('Phone has spun 180 degrees. Spin count:', spinCountB);
         
         totalRotationB = 0;
-    }
-    ////////////////////
-    if (aRot === null){
-        aRot = e.alpha
-    }
-    
-    if (prevRotA !== null) {
-        let delta = aRot - prevRotA;
-        if (delta > 180) delta -= 360;
-        if (delta < 180) delta += 360;
-        totalRotationA += delta
-    }
-    prevRotA = e.alpha
-
-    if (Math.abs(totalRotationA) >= 180) {
-        spinCount++;
-        console.log('Phone has spun 180 degrees. Spin count:', spinCount);
-        
-        totalRotationA = 0;
     }
 
     let a = Math.round(e.alpha / 30) * 30
