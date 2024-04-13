@@ -1,10 +1,16 @@
+
 function showRot(e){
     //console.log(e);
-    let a = e.alpha
-    let b = e.beta
-    let g = e.gamma
+    let a = Math.round(e.alpha / 90) * 90
+    let b = Math.round(e.beta / 90) * 90
+    let g = Math.round(e.gamma / 90) * 90
 
-    document.getElementById("rot").innerHTML = "| A: " + Math.Round(a) + " | B: " + Math.Round(b) + " | G: " + Math.Round(g) + " |"
+    document.getElementById("Shuv").innerHTML = a
+    document.getElementById("Flip").innerHTML = b
+    document.getElementById("KickHeel").innerHTML = g
+
+    var newRot = [a, b, g]
+    lastRotationValues = newRot;
 }
 async function getRot(){
     if(typeof DeviceOrientationEvent !='undefined ' && typeof DeviceOrientationEvent.requestPermission === 'function'){
