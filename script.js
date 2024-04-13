@@ -8,7 +8,9 @@ let bRot = null;
 let prevRotB = null;
 let totalRotationB = 0;
 
-
+function error(problem){
+    document.getElementById("errors").innerHTML += problem
+}
 
 function showRot(e){
     if (aRot === null){
@@ -24,8 +26,9 @@ function showRot(e){
     prevRotA = e.alpha
 
     if (Math.abs(totalRotationA) >= 180) {
-        spinCount++;
-        console.log('Phone has spun 180 degrees. Spin count:', spinCountA);
+        spinCountA++;
+        console.log('Phone has spun 180 degrees alpha. Spin count:', spinCountA);
+        document.getElementById("shuvTotal").innerHTML = spinCountA
         
         totalRotationA = 0;
     }
@@ -43,8 +46,8 @@ function showRot(e){
     prevRotB = e.beta
 
     if (Math.abs(totalRotationB) >= 180) {
-        spinCount++;
-        console.log('Phone has spun 180 degrees. Spin count:', spinCountB);
+        spinCountB++;
+        console.log('Phone has spun 180 degrees beta. Spin count:', spinCountB);
         
         totalRotationB = 0;
     }
